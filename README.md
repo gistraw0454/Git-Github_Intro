@@ -16,4 +16,4 @@
 
 ## 참고 영상
 
-[누구나 쉽게! Git&GitHub]<https://www.ddazua.com/course/view.php?id=3507>
+[누구나 쉽게! Git&GitHub](https://www.ddazua.com/course/view.php?id=3507)
