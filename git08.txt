@@ -1,0 +1,49 @@
+커밋정보 확인하기
+	소스트리 --> 브랜치
+	cli --> git log
+			--graph 옵션 : 그래프 모양으로 커밋 보여주기
+			--oneline 옵션 : 커밋id와 메세지를 한줄에 출력
+			-숫자 : 최근 해당숫자만큼의 커밋내용보기
+
+충돌
+	같은 파일 내에서 같은 줄을 수정하거나 삭제 또는 변경한 후 , 해당 대상을 하나로 merge(합칠)때 충돌 발생 -> 이때 수정해야할 부분을 알려줌
+	충돌이 발생되면 자동으로 합쳐진 내용이 커밋되지는 않고 직접 내용을 수정한 후 똑같이 스테이지에 올려주고, commit 해줘야한다.
+
+re-base
+	base를 다시 설정한다
+	base : branch가 뻗어나가기 시작하는 commit
+	
+	뿌리를 바꿔주고싶은 브랜치에서 작업
+		git rebase 뿌리가존재하는브랜치명
+	
+	rebase 완료된 후에는 merge하여 합쳐주는 것도 가능
+	바꿔주겠다는거지 합쳐준다는건 아님.
+	git rebase master
+
+rebase과정에서 충돌
+	충돌내용을 수정한 후 add 하여 스테이지에 올려주고,
+	git rebase --continue 를 사용하여 리베이스를 진행
+	
+
+
+
+
+
+
+$ git log --graph
+* commit 25fa8026fa0d3c4d71b1437c70f07bbe1ebcc6ae (HEAD -> master)
+| Author: gmstraw0454 <gmstraw0454@gmail.com>
+| Date:   Fri Jun 28 13:24:37 2024 +0900
+|
+|     2nd commit
+|
+* commit ffdf283dd113a10290a6a72cd84e1247b0eee1e0
+  Author: gmstraw0454 <gmstraw0454@gmail.com>
+  Date:   Fri Jun 28 13:23:28 2024 +0900
+
+      1st commit
+
+
+$git log --oneline --graph 		//이렇게하면 gui처럼 나옴
+* 25fa802 (HEAD -> master) 2nd commit
+* ffdf283 1st commit

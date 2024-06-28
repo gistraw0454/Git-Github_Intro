@@ -1,0 +1,16 @@
+working directory <--> stage <--> repository
+
+git rm --cached 파일명 : untracked 로 stage에서 내려버린다.
+
+git commit
+	커밋(영구저장) 메세지를 남겨야한다. (권장사항)
+	stage 상태의 파일(modified 혹은 untracked 파일X)들을 영구적으로 저장
+		첫번째 빈칸줄에 커밋내용 적을 수 있다.
+	git commit -m '커밋메세지'
+		간단하게 작은따옴표나 쌍따옴표로 안쪽 내용을 커밋메세지로 쓸수있게 해줌.
+	git commit -a 
+	track되어 modified된 파일에만 적용가능 (최초 파일x)
+	add되지않은 (unstage된 파일) 을 컴빗하고싶은데 매번 add 명령어 쓰기 귀찮다면 사용
+	git commit -am 도 가능
+
+

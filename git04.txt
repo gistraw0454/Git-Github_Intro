@@ -1,0 +1,24 @@
+git
+	local 저장소
+github
+	remote 저장소로 활용되는 서버
+
+<github 원격저장소와 로컬저장소 연결>
+1. 원격 저장소 만들기
+	로그인 > repository 만들기
+2. 내가 만든 원격 저장소, 로컬 저장소 연결
+	(1) git branch -M main 
+		master-> main 
+		branch 를 변경해주는과정
+	(2) git remote origin 원격저장소주소
+		git 로컬저장소와 연결된 원격 저장소 설정
+		원격 저장소 주소가 너무 기니까 origin이라는 별칭을 쓰겠다
+		(orgin 말고다른걸 적어도됨)
+git remote
+	해당 레포지토리와 연결된 원격저장소를 알려줘~
+	(3) git push  원격저장소별칭 branch이름
+		git push origin main : origin이라는 별칭을 가진 원격저장소의 main이라는 브랜치에다가 업로드 하겠다.
+		commit된 대상만 업로드 가능.
+-u 옵션
+	git push -u 별칭 브랜치이름
+	해당 옵션으로 한번 설정하면 git push 만해도 별칭과 브랜치 이름 생략 해서 push 가능

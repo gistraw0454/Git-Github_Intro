@@ -1,0 +1,58 @@
+파일 확장자
+	해당 파일이 어떤 파일인지 알려주는 역할
+	파일마다 정해져있다. (.txt, .pptx, .xlsx,...)
+	보기 -> 파일확장자 체크
+
+GUI(Graphic User Interface)
+	사용자가 편히 사용할 수 있도록 버튼이나 아이콘과 같은 그래픽기반의 사용환경
+	source tree에서 create에 레퍼지토리 경로를 넣어주면 자동으로 git init이됨.
+	마우스 우클릭 -> Git GUI Here 
+
+CLI(Command Line Interface)
+	명령어 기반 사용환경 
+	cmd 나, Git Bash Here 쓰면됨.
+
+소스트리 (source tree)
+	git 을 쉽게 사용할수있게 도와주는 외부 gui tool
+
+
+git 공간분리
+	동작과 이력을 효율적으로 처리하기위해 저장공간을 논리적으로 분리(물리적x라서 눈으로 보이진 x)
+	작업공간(working directory/working tree)
+	임시저장공간(stage)
+	실질적으로 저장되고 기록되는 공간(respository)
+	
+작업공간(working tree)
+	작업하는 공간
+	로컬저장소에 접근하여 파일을 생성 수정 저장하는 공간
+	스테이지 영역과 맞다아 있다.
+	작업공간에 새롭게 만들어진 파일들은 최초 모두 untracked
+	해당 파일들을 수정 사항을 반영하고 싶다면 tracked 상태로 바꿔줘야한다 (이 파일 관리해줘~ 통지)
+		git add 파일명 : 해당 파일이 tracked 상태로 변경(stage로 이동)
+		GUI(sourcetree)에서는 파일옆에 +버튼을 클릭하면 tracked상태로 변경되고 stage에 올라감
+
+임시저장공간(stage)
+	tracked 된 파일들을 관리하는 영역
+	작업공간과 연결
+	tracked된 파일들의 추적상태를 잠시 복사하여 저장
+	stage영역에 저장된 파일들은 모두 tracked 상태가 된다
+	최종적인 파일의 변화를 영구적으로 저장하기 위해서는 모든 파일의 상태가 stage 상태가 되어야한다
+	unstage상태: 스테이지 영역에 있는 파일과 working directory 안의 파일에 차이가 있을때 
+		stage에 올라가지 않은, 작업공간에 새롭게 만들어진 파일(untracked)도 unstage 상태라 할수있다
+	stage 상태: 작업공간과 stage 영역에있는 파일이 동일한 상태
+	
+	원본과 수정본의 기록을 구분하기 위해 modified unmodified 로 나뉨.
+
+	working dir 
+		tracked
+			unmodifred 상태 -> stage 상태
+			modified 상태 -> unstage 상태
+		untracked
+			새로만든거.. -> unstage 상태
+	
+
+git 명령어 (cli 에서 사용되는..)
+	git init	: 초기화 명령어 (저장소 만들어줘~)
+	git add : (track 상태로 바꿔줘~)
+	git status : 상태확인 명령어
+	
